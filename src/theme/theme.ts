@@ -1,11 +1,11 @@
 import { extendTheme } from "@chakra-ui/react";
-import { generateKey } from "crypto";
+
 
 const theme = extendTheme({
   styles: {
     global: {
       body: {
-        backgroundColor: "gray",
+        backgroundColor: "white",
         color: "generateKey.800",
       },
     },
