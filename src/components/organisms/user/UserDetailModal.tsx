@@ -12,6 +12,7 @@ import {
   Stack,
 } from "@chakra-ui/react";
 import { ChangeEvent, memo, useEffect, useState, VFC } from "react";
+import { useMessage } from "../../../hooks/useMessage";
 import { User } from "../../../types/api/user";
 import { PrimaryButton } from "../../atoms/PrimaryButton";
 
@@ -24,6 +25,7 @@ type Props = {
 
 export const UserDetailModal: VFC<Props> = memo((props) => {
   const { user, isOpen, isAdmin = false, onClose } = props;
+  const { showMessage } = useMessage();
 
   const [username, setUsername] = useState("");
   const [name, setName] = useState("");
@@ -46,7 +48,7 @@ export const UserDetailModal: VFC<Props> = memo((props) => {
   const onChangePhone = (e: ChangeEvent<HTMLInputElement>) =>
     setPhone(e.target.value);
 
-  const onClickUpdate = () => alert("更新しました");
+  const onClickUpdate = () => showMessage({ title: "更新しました", status: "success" });
 
   return (
     <Modal

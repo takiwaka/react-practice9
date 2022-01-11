@@ -24,17 +24,15 @@ export const Home: VFC = memo(() => {
   return (
     <>
       <Wrap p={{ base: 4, md: 10 }} justify="center">
-        {users.map((user) => (
-          <WrapItem>
-            <UserCard
-              id={2}
-              imageUrl="https://source.unsplash.com/random"
-              userName={user.username}
-              fullName={user.name}
-              onClick={onClickUser}
-            />
-          </WrapItem>
-        ))}
+        <WrapItem>
+          <UserCard
+            id={3}
+            imageUrl="https://source.unsplash.com/random"
+            userName="a"
+            fullName="aa"
+            onClick={onClickUser}
+          />
+        </WrapItem>
       </Wrap>
 
       <UserDetailModal
